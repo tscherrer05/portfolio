@@ -19,6 +19,12 @@ export interface Project {
   type: 'architecture' | 'dev' | 'saas' | 'talk';
 }
 
+export interface LinkedInPost {
+  url: string;
+  height: number;
+  width: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -168,5 +174,14 @@ export class PortfolioService {
     { category: "DevOps & Tools", items: ["Kubernetes", "Docker", "GitHub Actions", "Azure DevOps", "DataDog", "Splunk"] },
     { category: "Database", items: ["PostgreSQL", "SQL Server", "Redis"] },
     { category: "Languages", items: ["French (Native)", "English (C2)"] }
+  ]);
+
+  linkedInPosts = signal<LinkedInPost[]>([
+    { url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7211854104401223680?collapsed=1", height: 670, width: 504 },
+    { url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7065662391761432576?collapsed=1", height: 499, width: 504 },
+    { url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7039942131255234560?collapsed=1", height: 264, width: 504 },
+    { url: "https://www.linkedin.com/embed/feed/update/urn:li:share:6864484558595739648?collapsed=1", height: 264, width: 504 },
+    { url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7318703366916743170?collapsed=1", height: 506, width: 504 },
+    { url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7256225160859451392?collapsed=1", height: 499, width: 504 }
   ]);
 }

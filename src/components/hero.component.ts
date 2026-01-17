@@ -24,7 +24,7 @@ import { SkillsGraphComponent } from './skills-graph.component';
               
               @if (!showInitials()) {
                 <img 
-                  [src]="currentImageSrc()" 
+                  [src]="imageSrc()" 
                   (error)="handleImageError()"
                   alt="Timothée Scherrer" 
                   class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white shadow-xl object-cover bg-white"
@@ -72,16 +72,10 @@ import { SkillsGraphComponent } from './skills-graph.component';
 export class HeroComponent {
   data = inject(PortfolioService);
   
-  // Primary image source
-  currentImageSrc = signal("/me.jpg");
+  imageSrc = signal("https://github.com/tscherrer05.png");
   showInitials = signal(false);
 
   handleImageError() {
-    // If me.jpg fails, try the GitHub profile image as a reliable fallback
-    if (this.currentImageSrc() === "me.jpg") {
-      this.currentImageSrc.set("https://github.com/tscherrer05.png");
-    } else {
-      // If even GitHub fails, show initials
       this.showInitials.set(true);
     }
   }
