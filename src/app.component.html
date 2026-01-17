@@ -1,0 +1,27 @@
+<div class="min-h-screen flex flex-col">
+  <main class="flex-grow pt-16">
+    <app-hero />
+    
+    <section id="about" class="py-20 bg-white">
+      <app-about />
+    </section>
+
+    <section id="projects" class="py-20 bg-slate-50">
+      <app-projects />
+    </section>
+
+    <section id="experience" class="py-20 bg-white">
+      <app-experience />
+    </section>
+
+    <section id="contact" class="py-20 bg-slate-900 text-white">
+      <app-contact />
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+      <p>&copy; {{ currentYear }} Timothée Scherrer. Built with Angular & Tailwind.</p>
+    </div>
+  </footer>
+</div>
